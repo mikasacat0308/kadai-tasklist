@@ -1,0 +1,21 @@
+<div class="row">
+  <aside class="col-xs-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @user.name %></h3>
+      </div>
+      <div class="panel-body">
+        <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+   <div class="col-md-8" style="margin-top: 30px">
+     <div class="text-center">
+        <button type="button" class="btn btn-default">
+          <%= link_to '新規タスクの投稿', new_task_path %>
+        </button>
+     </div>
+     <div>▼タスク一覧▼</div>
+      <%= render 'tasks/tasks1', tasks: @tasks, user: @user %>
+    </div>
+</div>
